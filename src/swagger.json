@@ -1,0 +1,49 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Desafi 05",
+        "description": "Documentacao do desafio 05",
+        "version": "0.0.1",
+        "contact": {
+            "email": "dev@moju.com.br"
+        }
+    },
+    "paths": {
+        "/users": {
+            "post": {
+                "tags": ["users"],
+                "sumary": "Create a new user",
+                "description": "With this route it is possible create a new user",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "email": {
+                                        "type": "string"
+                                    }
+                                }, 
+                                "example": {
+                                    "name": "John duo",
+                                    "email": "john@don.com"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    },
+                    "500": {
+                        "description": "User already exist"
+                    }
+                }
+            }
+        }
+    }
+}
